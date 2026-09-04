@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Login Page</title>
+    <style>
+        /* Reset basic styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Center the login container on the screen */
+        body {
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Login Card Container */
+        .login-container {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-container h2 {
+            margin-bottom: 24px;
+            color: #333333;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666666;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        /* Change border color when clicking inside the input */
+        .form-group input:focus {
+            border-color: #9b59b6;
+        }
+
+        /* Utilities row (Remember me & Forgot Password) */
+        .form-utils {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .form-utils a {
+            color: #9b59b6;
+            text-decoration: none;
+        }
+
+        .form-utils a:hover {
+            text-decoration: underline;
+        }
+
+        /* Submit Button */
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: #9b59b6;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background: #8e44ad;
+        }
+
+        /* Register link text */
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .register-link a {
+            color: #9b59b6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        
+        <!-- Form Tag: 'action' handles backend processing, 'method' keeps credentials secure -->
+        <form action="/login-endpoint" method="POST">
+            
+            <!-- Username Input Field -->
+            <div class="form-group">
+                <label for="username">Username or Email</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            
+            <!-- Password Input Field -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            
+            <!-- Remember Me & Forgot Password Layout -->
+            <div class="form-utils">
+                <label>
+                    <input type="checkbox" name="remember"> Remember me
+                </label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            
+            <!-- Submit Action -->
+            <button type="submit" class="btn-submit">Sign In</button>
+            
+            <!-- Registration Link -->
+            <div class="register-link">
+                Don't have an account? <a href="#">Register here</a>
+            </div>
+            
+        </form>
+    </div>
+
+</body>
+</html>
